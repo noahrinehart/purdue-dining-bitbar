@@ -37,7 +37,7 @@ def print_menu(location_json):
 
 
 def bitbar_main():
-    print("Dining")
+    print("🍴")
     print("---")
     for location in locations:
         print_menu(fetch_menu(location))
