@@ -19,8 +19,12 @@ def fetch_menu(location):
 
     time = datetime.datetime.now()
     ftime = time.strftime("%m-%d-%Y")
-    r = requests.get(url+location+"/"+ftime+"/", headers=header)
-    return r.json()
+    try:
+        r =  requests.get(url+location+"/"+ftime+"/", headers=header)
+        return r.json()
+    except requests.ConnectionError:
+        print("Failed to connect!")
+
 
 
 def print_menu(location_json):
